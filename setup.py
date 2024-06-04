@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyenv-loader',
+    name='pyenv_loader',
     version='0.1',
     packages=find_packages(),
     install_requires=[
@@ -21,7 +21,7 @@ setup(
     python_requires='>=3.6',
     entry_points={
         'console_scripts': [
-            'pyenv-loader=pyenv_loader.__init__:main',
+            'pyenv_loader=pyenv_loader.__init__:main',
         ],
     },
 )
