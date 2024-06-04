@@ -8,7 +8,7 @@ A package to load environment variables from a .env file specified by an environ
 To install the package, use pip:
 
 ```bash
-pip install pyenv-loader
+pip install pyenv_loader
 ```
 
 ## Usage
