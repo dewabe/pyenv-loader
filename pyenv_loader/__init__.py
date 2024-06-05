@@ -1,26 +1,30 @@
 import os
 from dotenv import load_dotenv
 
-def load_env_var(variable):
+def load_env_var(variable, value=None):
     """
     Load a specific environment variable.
 
-    This function retrieves the value of the specified environment variable.
+    This function retrieves the value of the specified environment variable. If the environment variable is not set,
+    it will return the provided default value if given, otherwise, it raises an EnvironmentError.
 
     Args:
         variable (str): The name of the environment variable.
+        value (str, optional): The default value to return if the environment variable is not set. Defaults to None.
 
     Returns:
-        str: The value of the environment variable.
+        str: The value of the environment variable, or the default value if the environment variable is not set.
 
     Raises:
-        EnvironmentError: If the environment variable is not set.
+        EnvironmentError: If the environment variable is not set and no default value is provided.
     """
     env_var = os.getenv(variable)
 
     # If the environment variable is not set, raise an exception
-    if env_var is None:
+    if env_var is None and value is None:
         raise EnvironmentError(f'{variable} is not set')
+    if env_var is None:
+        return value
     
     return env_var
 

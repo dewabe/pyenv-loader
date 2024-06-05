@@ -90,3 +90,17 @@ load_env_vars()
 ## License
 
 This project is licensed under the MIT License.
+
+## Updates
+
+### 0.1.1
+
+We have updated the `load_env_var` function to include an optional default value parameter. Now, if the specified environment variable is not set, you can provide a default value that will be returned instead of raising an error. This allows for more flexibility and control in situations where certain environment variables might not be available.
+
+Here is an example of how to use the updated `load_env_var` function:
+
+```python
+database_url = load_env_var('DATABASE_URL', 'sqlite:///default.db')
+```
+
+In this example, if DATABASE_URL is not set in your environment variables, the function will return 'sqlite:///default.db' as the default value, allowing your application to continue running with a fallback option.
